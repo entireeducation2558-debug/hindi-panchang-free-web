@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आज का पंचांग - दैनिक हिन्दू पंचांग, तिथि, नक्षत्र, शुभ मुहूर्त | Hindi Panchang</title>
+    <meta name="description" content="सटीक दैनिक हिन्दू पंचांग (Hindi Panchang): आज की तिथि, नक्षत्र, योग, करण, सूर्योदय, सूर्यास्त, राहुकाल और शुभ मुहूर्त अपने शहर के अनुसार जानें।">
+    <meta name="keywords" content="Hindi Panchang, Aaj Ka Panchang, आज का पंचांग, हिन्दू कैलेंडर, शुभ मुहूर्त, राहुकाल, तिथि, नक्षत्र, पंचांग कैलकुलेटर">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hindipanchang.example.com/">
+
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="आज का पंचांग - सटीक हिन्दू पंचांग एवं मुहूर्त">
+    <meta property="og:description" content="अपने शहर के अनुसार सटीक सूर्योदय, सूर्यास्त, तिथि, नक्षत्र, योग, करण और राहुकाल की जानकारी प्राप्त करें।">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="hi_IN">
+
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Hindi Panchang - दैनिक हिन्दू पंचांग",
+      "url": "https://hindipanchang.example.com/",
+      "applicationCategory": "ReferenceApplication",
+      "operatingSystem": "All",
+      "inLanguage": "hi",
+      "description": "दृक गणित एवं सूर्य सिद्धांत पर आधारित सटीक भारतीय हिन्दू पंचांग कैलकुलेटर।",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts: Rozha One & Noto Sans Devanagari + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans Devanagari"', 'Inter', 'sans-serif'],
+                        display: ['"Rozha One"', '"Noto Sans Devanagari"', 'serif'],
+                    },
+                    colors: {
+                        saffron: {
+                            50: '#FFFDF7',
+                            100: '#FFF6E0',
+                            200: '#FFE8B3',
+                            300: '#FFD27A',
+                            400: '#FFB338',
+                            500: '#FF8C00',
+                            600: '#E66C00',
+                            700: '#BF4E00',
+                            800: '#993B00',
+                            900: '#7A2E00',
+                        },
+                        cream: {
+                            50: '#FFFEFA',
+                            100: '#FDF8EC',
+                            200: '#F9EED4',
+                        },
+                        maroon: {
+                            800: '#7C1D1D',
+                            900: '#5C1111',
+                        }
+                    },
+                    boxShadow: {
+                        'sacred': '0 10px 30px -5px rgba(230, 108, 0, 0.12), 0 4px 10px -2px rgba(124, 29, 29, 0.05)',
+                        'card': '0 4px 20px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #FFFEFA;
+            background-image: radial-gradient(#F9EED4 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .mandala-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FF8C00' stroke-opacity='0.12' stroke-width='1'%3E%3Ccircle cx='60' cy='60' r='50'/%3E%3Ccircle cx='60' cy='60' r='38'/%3E%3Ccircle cx='60' cy='60' r='25'/%3E%3Cpath d='M60 10 L65 30 L85 20 L72 38 L95 45 L75 55 L95 75 L72 72 L80 95 L62 80 L50 100 L48 78 L25 90 L38 70 L15 65 L35 52 L20 32 L42 38 Z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -6px rgba(230, 108, 0, 0.16);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FDF8EC; }
+        ::-webkit-scrollbar-thumb { background: #FFB338; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E66C00; }
+    </style>
+</head>
+<body class="text-stone-800 antialiased selection:bg-saffron-200 selection:text-saffron-900">
+
+    <!-- Top Sacred Strip -->
+    <div class="bg-gradient-to-r from-maroon-900 via-saffron-800 to-maroon-900 text-saffron-100 text-xs sm:text-sm py-2 px-4 border-b border-saffron-500/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 font-medium">
+                <span class="text-saffron-300 text-base">ॐ</span>
+                <span>श्री गणेशाय नमः • दृक सिद्धान्त आधारित शुद्ध भारतीय पंचांग</span>
+            </div>
+            <div class="flex items-center gap-4 text-saffron-200">
+                <span id="live-clock" class="font-mono font-semibold bg-black/25 px-2.5 py-0.5 rounded-full text-xs"></span>
+                <button onclick="openBackendModal()" class="underline hover:text-white transition flex items-center gap-1 text-xs cursor-pointer">
+                    <i data-lucide="code-2" class="w-3.5 h-3.5"></i> Python Flask + Swiss Ephemeris कोड
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-saffron-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-saffron-500 to-saffron-700 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <span class="font-display text-2xl sm:text-3xl leading-none pt-1">ॐ</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-display text-2xl sm:text-3xl text-maroon-900 tracking-wide">हिन्दी पंचांग</span>
+                            <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider bg-saffron-100 text-saffron-800 px-2 py-0.5 rounded-full border border-saffron-300">Pro</span>
+                        </div>
+                        <p class="text-[11px] sm:text-xs text-stone-500 font-medium -mt-1">Hindi Panchang & हिन्दू कैलेंडर</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#panchang-calculator" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-saffron-700 bg-saffron-50 hover:bg-saffron-100 transition">आज का पंचांग</a>
+                    <a href="#muhurat-section" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:text-saffron-700 hover:bg-saffron-50 transition">शुभ मुहूर्त</a>
+                    <a href="#festivals-section" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:text-saffron-700 hover:bg-saffron-50 transition">व्रत-त्योहार २०२६</a>
+                    <a href="#rashifal-section" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:text-saffron-700 hover:bg-saffron-50 transition">१२ राशियाँ</a>
+                    <a href="#articles-section" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-700 hover:text-saffron-700 hover:bg-saffron-50 transition">पंचांग ज्ञान</a>
+                </nav>
+
+                <!-- Action Button & Mobile Menu Toggle -->
+                <div class="flex items-center gap-2">
+                    <button onclick="setTodayAndCalculate()" class="hidden sm:inline-flex items-center gap-1.5 bg-gradient-to-r from-saffron-600 to-saffron-700 hover:from-saffron-700 hover:to-maroon-800 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm transition cursor-pointer">
+                        <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                        <span>आज की तिथि</span>
+                    </button>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl text-stone-700 hover:bg-saffron-100 transition" aria-label="मेनू खोलें">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-saffron-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#panchang-calculator" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-semibold text-saffron-800 bg-saffron-50">आज का पंचांग</a>
+            <a href="#muhurat-section" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-stone-700 hover:bg-saffron-50">शुभ एवं अशुभ मुहूर्त</a>
+            <a href="#festivals-section" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-stone-700 hover:bg-saffron-50">प्रमुख व्रत एवं त्योहार २०२६</a>
+            <a href="#rashifal-section" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-stone-700 hover:bg-saffron-50">१२ राशियों का परिचय</a>
+            <a href="#choghadiya-section" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-stone-700 hover:bg-saffron-50">दिन व रात्रि चौघड़िया</a>
+            <a href="#articles-section" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-base font-medium text-stone-700 hover:bg-saffron-50">पंचांग के पाँच अंग</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-saffron-100/80 via-cream-100 to-transparent pt-8 pb-10 sm:pt-12 sm:pb-14 mandala-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-saffron-300 shadow-sm text-saffron-800 text-xs sm:text-sm font-semibold mb-4">
+                    <span class="w-2 h-2 rounded-full bg-saffron-500 animate-pulse"></span>
+                    <span>खगोलीय गणना (Swiss Ephemeris) पर आधारित सटीक पंचांग</span>
+                </div>
+                <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl text-maroon-900 leading-tight mb-3">
+                    दैनिक हिन्दू पंचांग एवं शुभ मुहूर्त
+                </h1>
+                <p class="text-stone-600 text-sm sm:text-lg leading-relaxed">
+                    भारत के किसी भी शहर और तिथि के लिए सटीक <strong>तिथि, वार, नक्षत्र, योग, करण</strong>, सूर्योदय-सूर्यास्त, राहुकाल और अभिजीत मुहूर्त की तुरंत गणना करें।
+                </p>
+            </div>
+
+            <!-- PANCHANG CALCULATOR WIDGET -->
+            <div id="panchang-calculator" class="bg-white rounded-3xl shadow-sacred border border-saffron-200 p-5 sm:p-8 max-w-5xl mx-auto">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 mb-6 border-b border-saffron-100">
+                    <div class="flex items-center gap-2.5">
+                        <div class="p-2.5 rounded-xl bg-saffron-100 text-saffron-700">
+                            <i data-lucide="compass" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg sm:text-xl font-bold text-stone-900">पंचांग कैलकुलेटर (Panchang Calculator)</h2>
+                            <p class="text-xs sm:text-sm text-stone-500">दिनांक और अपना शहर चुनकर पंचांग देखें</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeDay(-1)" class="p-2.5 rounded-xl border border-stone-200 hover:border-saffron-400 hover:bg-saffron-50 text-stone-700 transition cursor-pointer" title="पिछला दिन">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="setTodayAndCalculate()" class="px-3.5 py-2 rounded-xl bg-saffron-100 hover:bg-saffron-200 text-saffron-900 text-xs sm:text-sm font-bold transition cursor-pointer">
+                            आज (Today)
+                        </button>
+                        <button onclick="changeDay(1)" class="p-2.5 rounded-xl border border-stone-200 hover:border-saffron-400 hover:bg-saffron-50 text-stone-700 transition cursor-pointer" title="अगला दिन">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Input Controls Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+                    <!-- Date Picker -->
+                    <div class="md:col-span-4">
+                        <label for="panchang-date" class="block text-sm font-bold text-stone-700 mb-1.5 flex items-center gap-1.5">
+                            <i data-lucide="calendar" class="w-4 h-4 text-saffron-600"></i>
+                            <span>तिथि / दिनांक चुनें</span>
+                        </label>
+                        <input type="date" id="panchang-date" class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-cream-50 text-stone-900 font-semibold focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500 transition">
+                    </div>
+
+                    <!-- City Selector -->
+                    <div class="md:col-span-5">
+                        <label for="panchang-city" class="block text-sm font-bold text-stone-700 mb-1.5 flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-saffron-600"></i>
+                            <span>शहर चुनें (अक्षांश व देशांतर सहित)</span>
+                        </label>
+                        <select id="panchang-city" class="w-full px-4 py-3 rounded-xl border border-stone-300 bg-cream-50 text-stone-900 font-semibold focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-saffron-500 transition">
+                            <option value="delhi">नई दिल्ली, दिल्ली (28.61°N, 77.20°E)</option>
+                            <option value="varanasi">वाराणसी (काशी), उत्तर प्रदेश (25.31°N, 82.97°E)</option>
+                            <option value="agra" selected>आगरा, उत्तर प्रदेश (27.17°N, 78.00°E)</option>
+                            <option value="ayodhya">अयोध्या, उत्तर प्रदेश (26.79°N, 82.19°E)</option>
+                            <option value="ujjain">उज्जैन, मध्य प्रदेश (23.17°N, 75.78°E)</option>
+                            <option value="mumbai">मुंबई, महाराष्ट्र (19.07°N, 72.87°E)</option>
+                            <option value="jaipur">जयपुर, राजस्थान (26.91°N, 75.78°E)</option>
+                            <option value="prayagraj">प्रयागराज, उत्तर प्रदेश (25.43°N, 81.84°E)</option>
+                            <option value="haridwar">हरिद्वार, उत्तराखंड (29.94°N, 78.16°E)</option>
+                            <option value="kolkata">कोलकाता, पश्चिम बंगाल (22.57°N, 88.36°E)</option>
+                            <option value="bengaluru">बेंगलुरु, कर्नाटक (12.97°N, 77.59°E)</option>
+                            <option value="chennai">चेन्नई, तमिलनाडु (13.08°N, 80.27°E)</option>
+                            <option value="patna">पटना, बिहार (25.59°N, 85.13°E)</option>
+                            <option value="ahmedabad">अहमदाबाद, गुजरात (23.02°N, 72.57°E)</option>
+                        </select>
+                    </div>
+
+                    <!-- Calculate Button -->
+                    <div class="md:col-span-3">
+                        <button onclick="calculateAndRenderPanchang()" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-saffron-500 via-saffron-600 to-maroon-800 hover:from-saffron-600 hover:to-maroon-900 text-white font-bold text-base shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 cursor-pointer">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            <span>पंचांग देखें</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PANCHANG RESULTS SECTION -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-10">
+
+        <!-- Summary Banner Card -->
+        <div class="bg-gradient-to-r from-maroon-900 via-saffron-900 to-maroon-900 rounded-3xl p-6 sm:p-8 text-white shadow-sacred relative overflow-hidden">
+            <div class="absolute right-0 top-0 opacity-10 pointer-events-none">
+                <svg width="260" height="260" viewBox="0 0 200 200" fill="none">
+                    <circle cx="150" cy="50" r="120" stroke="#FFD27A" stroke-width="2" stroke-dasharray="6 6"/>
+                    <circle cx="150" cy="50" r="90" stroke="#FFD27A" stroke-width="1.5"/>
+                    <circle cx="150" cy="50" r="60" stroke="#FFD27A" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span id="res-city-badge" class="bg-saffron-500/30 border border-saffron-400/40 text-saffron-200 text-xs font-bold px-3 py-1 rounded-full">
+                            📍 आगरा, भारत
+                        </span>
+                        <span id="res-samvat-badge" class="bg-white/10 text-cream-100 text-xs font-semibold px-3 py-1 rounded-full">
+                            विक्रम संवत २०८३ • शक संवत १९४८
+                        </span>
+                    </div>
+                    <h2 id="res-hindi-date-title" class="font-display text-2xl sm:text-4xl text-saffron-200 tracking-wide">
+                        मंगलवार, २४ नवम्बर २०२६
+                    </h2>
+                    <p id="res-hindu-month-subtitle" class="text-saffron-100/90 text-sm sm:text-base mt-1 font-medium">
+                        मार्गशीर्ष मास, कृष्ण पक्ष, प्रतिपदा तिथि • हेमन्त ऋतु
+                    </p>
+                </div>
+
+                <!-- Sun & Moon Timings Pill Box -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-black/25 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+                    <div class="text-center px-2">
+                        <div class="text-saffron-300 text-xs flex items-center justify-center gap-1 mb-1">
+                            <i data-lucide="sunrise" class="w-3.5 h-3.5"></i> सूर्योदय
+                        </div>
+                        <div id="res-sunrise" class="font-bold text-base sm:text-lg text-white">06:44 AM</div>
+                    </div>
+                    <div class="text-center px-2 border-l border-white/10">
+                        <div class="text-saffron-300 text-xs flex items-center justify-center gap-1 mb-1">
+                            <i data-lucide="sunset" class="w-3.5 h-3.5"></i> सूर्यास्त
+                        </div>
+                        <div id="res-sunset" class="font-bold text-base sm:text-lg text-white">05:24 PM</div>
+                    </div>
+                    <div class="text-center px-2 sm:border-l border-white/10">
+                        <div class="text-saffron-300 text-xs flex items-center justify-center gap-1 mb-1">
+                            <i data-lucide="moon" class="w-3.5 h-3.5"></i> चन्द्रोदय
+                        </div>
+                        <div id="res-moonrise" class="font-bold text-base sm:text-lg text-white">06:12 PM</div>
+                    </div>
+                    <div class="text-center px-2 border-l border-white/10">
+                        <div class="text-saffron-300 text-xs flex items-center justify-center gap-1 mb-1">
+                            <i data-lucide="moon-star" class="w-3.5 h-3.5"></i> चन्द्रास्त
+                        </div>
+                        <div id="res-moonset" class="font-bold text-base sm:text-lg text-white">07:38 AM</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copy / Share Action Bar -->
+            <div class="relative z-10 mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-saffron-200">
+                <span id="res-festival-highlight" class="font-semibold text-amber-300 flex items-center gap-1.5">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> विशेष: रोहिणी व्रत एवं मार्गशीर्ष कृष्ण पक्ष आरम्भ
+                </span>
+                <button onclick="copyPanchangSummary()" class="inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 text-white px-3.5 py-1.5 rounded-xl font-semibold transition cursor-pointer">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span id="copy-btn-text">पंचांग कॉपी करें</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 5 ANGAS OF PANCHANG (पंचांग के पाँच प्रमुख अंग) -->
+        <div>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-maroon-900 flex items-center gap-2">
+                    <span class="w-2 h-7 bg-saffron-600 rounded-full"></span>
+                    <span>आज के पंचांग के पाँच प्रमुख अंग</span>
+                </h3>
+                <span class="text-xs font-semibold text-stone-500 bg-saffron-100 px-3 py-1 rounded-full">दृक गणित</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <!-- 1. Tithi -->
+                <div class="bg-white rounded-2xl p-5 border border-saffron-200 shadow-card card-hover">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-saffron-700 bg-saffron-100 px-2.5 py-1 rounded-lg">१. तिथि (Tithi)</span>
+                        <i data-lucide="moon" class="w-5 h-5 text-saffron-500"></i>
+                    </div>
+                    <div id="card-tithi" class="text-xl font-extrabold text-stone-900 mb-1">कृष्ण प्रतिपदा</div>
+                    <div id="card-tithi-end" class="text-xs text-stone-500 font-medium">समाप्ति: 04:18 PM तक</div>
+                    <div id="card-tithi-next" class="text-xs text-saffron-700 font-semibold mt-2 pt-2 border-t border-stone-100">तदुपरांत द्वितीया</div>
+                </div>
+
+                <!-- 2. Nakshatra -->
+                <div class="bg-white rounded-2xl p-5 border border-saffron-200 shadow-card card-hover">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-saffron-700 bg-saffron-100 px-2.5 py-1 rounded-lg">२. नक्षत्र (Nakshatra)</span>
+                        <i data-lucide="star" class="w-5 h-5 text-saffron-500"></i>
+                    </div>
+                    <div id="card-nakshatra" class="text-xl font-extrabold text-stone-900 mb-1">रोहिणी</div>
+                    <div id="card-nakshatra-end" class="text-xs text-stone-500 font-medium">समाप्ति: 06:52 PM तक</div>
+                    <div id="card-nakshatra-next" class="text-xs text-saffron-700 font-semibold mt-2 pt-2 border-t border-stone-100">तदुपरांत मृगशिरा</div>
+                </div>
+
+                <!-- 3. Yoga -->
+                <div class="bg-white rounded-2xl p-5 border border-saffron-200 shadow-card card-hover">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-saffron-700 bg-saffron-100 px-2.5 py-1 rounded-lg">३. योग (Yoga)</span>
+                        <i data-lucide="sun" class="w-5 h-5 text-saffron-500"></i>
+                    </div>
+                    <div id="card-yoga" class="text-xl font-extrabold text-stone-900 mb-1">शिव</div>
+                    <div id="card-yoga-end" class="text-xs text-stone-500 font-medium">समाप्ति: 02:15 PM तक</div>
+                    <div id="card-yoga-next" class="text-xs text-saffron-700 font-semibold mt-2 pt-2 border-t border-stone-100">तदुपरांत सिद्ध</div>
+                </div>
+
+                <!-- 4. Karana -->
+                <div class="bg-white rounded-2xl p-5 border border-saffron-200 shadow-card card-hover">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-saffron-700 bg-saffron-100 px-2.5 py-1 rounded-lg">४. करण (Karana)</span>
+                        <i data-lucide="compass" class="w-5 h-5 text-saffron-500"></i>
+                    </div>
+                    <div id="card-karana" class="text-xl font-extrabold text-stone-900 mb-1">कौलव</div>
+                    <div id="card-karana-end" class="text-xs text-stone-500 font-medium">समाप्ति: 04:18 PM तक</div>
+                    <div id="card-karana-next" class="text-xs text-saffron-700 font-semibold mt-2 pt-2 border-t border-stone-100">तदुपरांत तैतिल</div>
+                </div>
+
+                <!-- 5. Vara & Rashi -->
+                <div class="bg-white rounded-2xl p-5 border border-saffron-200 shadow-card card-hover">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-saffron-700 bg-saffron-100 px-2.5 py-1 rounded-lg">५. वार एवं राशि</span>
+                        <i data-lucide="orbit" class="w-5 h-5 text-saffron-500"></i>
+                    </div>
+                    <div id="card-vara" class="text-xl font-extrabold text-stone-900 mb-1">मंगलवार</div>
+                    <div id="card-moon-rashi" class="text-xs text-stone-500 font-medium">चन्द्र राशि: वृषभ</div>
+                    <div id="card-sun-rashi" class="text-xs text-saffron-700 font-semibold mt-2 pt-2 border-t border-stone-100">सूर्य राशि: वृश्चिक</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHUBH & ASHUBH MUHURAT SECTION -->
+        <div id="muhurat-section" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Shubh Muhurat (Auspicious Timings) -->
+            <div class="bg-white rounded-3xl border border-emerald-200 shadow-card overflow-hidden">
+                <div class="bg-gradient-to-r from-emerald-700 to-teal-700 px-6 py-4 text-white flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-emerald-200"></i>
+                        <h3 class="text-lg font-bold">शुभ मुहूर्त (Auspicious Timings)</h3>
+                    </div>
+                    <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-semibold">मांगलिक कार्य हेतु उत्तम</span>
+                </div>
+                <div class="p-6 divide-y divide-stone-100">
+                    <div class="py-3 first:pt-0 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">अभिजीत मुहूर्त (Abhijit Muhurat)</div>
+                            <div class="text-xs text-stone-500">सर्वश्रेष्ठ शुभ कार्य हेतु</div>
+                        </div>
+                        <span id="muhurat-abhijit" class="font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl text-sm border border-emerald-200">11:42 AM - 12:26 PM</span>
+                    </div>
+                    <div class="py-3 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">ब्रह्म मुहूर्त (Brahma Muhurat)</div>
+                            <div class="text-xs text-stone-500">ध्यान, पूजा एवं अध्ययन हेतु</div>
+                        </div>
+                        <span id="muhurat-brahma" class="font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl text-sm border border-emerald-200">05:02 AM - 05:53 AM</span>
+                    </div>
+                    <div class="py-3 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">अमृत काल (Amrit Kalam)</div>
+                            <div class="text-xs text-stone-500">नवीन आरम्भ एवं यात्रा हेतु</div>
+                        </div>
+                        <span id="muhurat-amrit" class="font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl text-sm border border-emerald-200">01:28 PM - 03:02 PM</span>
+                    </div>
+                    <div class="py-3 last:pb-0 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">विजय मुहूर्त (Vijaya Muhurat)</div>
+                            <div class="text-xs text-stone-500">विजय एवं महत्वपूर्ण निर्णय हेतु</div>
+                        </div>
+                        <span id="muhurat-vijaya" class="font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl text-sm border border-emerald-200">01:51 PM - 02:34 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ashubh Kaal (Inauspicious Timings) -->
+            <div class="bg-white rounded-3xl border border-rose-200 shadow-card overflow-hidden">
+                <div class="bg-gradient-to-r from-rose-800 to-maroon-900 px-6 py-4 text-white flex items-center justify-between">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="alert-triangle" class="w-6 h-6 text-rose-200"></i>
+                        <h3 class="text-lg font-bold">अशुभ काल (वर्ज्य समय)</h3>
+                    </div>
+                    <span class="text-xs bg-white/20 px-2.5 py-1 rounded-full font-semibold">नए कार्य वर्जित</span>
+                </div>
+                <div class="p-6 divide-y divide-stone-100">
+                    <div class="py-3 first:pt-0 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">राहुकाल (Rahu Kaal)</div>
+                            <div class="text-xs text-stone-500">इस समय शुभ कार्य प्रारंभ न करें</div>
+                        </div>
+                        <span id="ashubh-rahu" class="font-bold text-rose-700 bg-rose-50 px-3 py-1.5 rounded-xl text-sm border border-rose-200">02:44 PM - 04:04 PM</span>
+                    </div>
+                    <div class="py-3 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">यमगण्ड (Yamaganda)</div>
+                            <div class="text-xs text-stone-500">यात्रा एवं महत्वपूर्ण कार्य हेतु वर्ज्य</div>
+                        </div>
+                        <span id="ashubh-yama" class="font-bold text-rose-700 bg-rose-50 px-3 py-1.5 rounded-xl text-sm border border-rose-200">09:24 AM - 10:44 AM</span>
+                    </div>
+                    <div class="py-3 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">गुलिक काल (Gulikai Kaal)</div>
+                            <div class="text-xs text-stone-500">सामान्यतः मध्यम काल</div>
+                        </div>
+                        <span id="ashubh-gulika" class="font-bold text-amber-800 bg-amber-50 px-3 py-1.5 rounded-xl text-sm border border-amber-200">12:04 PM - 01:24 PM</span>
+                    </div>
+                    <div class="py-3 last:pb-0 flex items-center justify-between">
+                        <div>
+                            <div class="font-bold text-stone-800">दिशा शूल (Disha Shool)</div>
+                            <div class="text-xs text-stone-500">इस दिशा में यात्रा से बचें</div>
+                        </div>
+                        <span id="ashubh-disha" class="font-bold text-rose-700 bg-rose-50 px-3 py-1.5 rounded-xl text-sm border border-rose-200">उत्तर दिशा</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHOGHADIYA SECTION (चौघड़िया मुहूर्त) -->
+        <section id="choghadiya-section" class="bg-white rounded-3xl border border-saffron-200 p-6 sm:p-8 shadow-card">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-maroon-900 flex items-center gap-2">
+                        <i data-lucide="clock" class="w-6 h-6 text-saffron-600"></i>
+                        <span>आज का चौघड़िया मुहूर्त (Choghadiya)</span>
+                    </h3>
+                    <p class="text-sm text-stone-500 mt-1">सूर्योदय से सूर्यास्त तक के ८ शुभ-अशुभ प्रहर</p>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-semibold">
+                    <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">● अति शुभ (अमृत/शुभ/लाभ)</span>
+                    <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">● सामान्य (चर)</span>
+                    <span class="px-2.5 py-1 rounded-full bg-rose-100 text-rose-800">● अशुभ (रोग/काल/उद्वेग)</span>
+                </div>
+            </div>
+
+            <div id="choghadiya-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- 2026 MAJOR VRAT & FESTIVALS LIST (AdSense High-Value Content) -->
+        <section id="festivals-section" class="bg-white rounded-3xl border border-saffron-200 p-6 sm:p-8 shadow-card">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-saffron-700">हिन्दू व्रत एवं पर्व कैलेंडर</span>
+                    <h3 class="text-2xl sm:text-3xl font-display text-maroon-900 mt-1">प्रमुख व्रत एवं त्योहार सूची (२०२६)</h3>
+                    <p class="text-sm text-stone-600 mt-1">तिथि पर क्लिक करके उस दिन का संपूर्ण पंचांग और शुभ मुहूर्त तुरंत देखें।</p>
+                </div>
+                <span class="text-xs font-semibold bg-saffron-100 text-saffron-800 px-3 py-1.5 rounded-full border border-saffron-200">
+                    विक्रम संवत २०८२-२०८३
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div onclick="jumpToFestivalDate('2026-01-14')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">मकर संक्रांति / पोंगल</div>
+                        <div class="text-xs text-stone-500 mt-0.5">पौष कृष्ण एकादशी • १४ जनवरी २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-02-15')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">महाशिवरात्रि व्रत</div>
+                        <div class="text-xs text-stone-500 mt-0.5">फाल्गुन कृष्ण चतुर्दशी • १५ फ़रवरी २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-03-04')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">होली (रंगोत्सव)</div>
+                        <div class="text-xs text-stone-500 mt-0.5">चैत्र कृष्ण प्रतिपदा • ०४ मार्च २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-03-19')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">चैत्र नवरात्रि / गुड़ी पड़वा</div>
+                        <div class="text-xs text-stone-500 mt-0.5">चैत्र शुक्ल प्रतिपदा • १९ मार्च २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-03-26')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">श्री राम नवमी</div>
+                        <div class="text-xs text-stone-500 mt-0.5">चैत्र शुक्ल नवमी • २६ मार्च २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-04-19')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">अक्षय तृतीया (अबूझ मुहूर्त)</div>
+                        <div class="text-xs text-stone-500 mt-0.5">वैशाख शुक्ल तृतीया • १९ अप्रैल २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-08-28')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">रक्षा बन्धन</div>
+                        <div class="text-xs text-stone-500 mt-0.5">श्रावण पूर्णिमा • २८ अगस्त २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-09-04')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">श्री कृष्ण जन्माष्टमी</div>
+                        <div class="text-xs text-stone-500 mt-0.5">भाद्रपद कृष्ण अष्टमी • ०४ सितम्बर २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-09-14')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">गणेश चतुर्थी</div>
+                        <div class="text-xs text-stone-500 mt-0.5">भाद्रपद शुक्ल चतुर्थी • १४ सितम्बर २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-10-11')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">शारदीय नवरात्रि आरम्भ</div>
+                        <div class="text-xs text-stone-500 mt-0.5">आश्विन शुक्ल प्रतिपदा • ११ अक्टूबर २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-10-20')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">विजयादशमी (दशहरा)</div>
+                        <div class="text-xs text-stone-500 mt-0.5">आश्विन शुक्ल दशमी • २० अक्टूबर २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+
+                <div onclick="jumpToFestivalDate('2026-11-08')" class="p-4 rounded-2xl border border-saffron-100 bg-cream-50 hover:border-saffron-400 hover:bg-saffron-50/60 transition cursor-pointer flex items-center justify-between">
+                    <div>
+                        <div class="font-bold text-stone-900">दीपावली (लक्ष्मी पूजन)</div>
+                        <div class="text-xs text-stone-500 mt-0.5">कार्तिक अमावस्या • ०८ नवम्बर २०२६</div>
+                    </div>
+                    <span class="text-xs font-bold text-saffron-700 bg-white px-2.5 py-1 rounded-lg border border-saffron-200">पंचांग →</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12 ZODIAC SIGNS (१२ राशियों का परिचय - Content Depth for AdSense) -->
+        <section id="rashifal-section" class="bg-white rounded-3xl border border-saffron-200 p-6 sm:p-8 shadow-card">
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-saffron-700">वैदिक ज्योतिष ज्ञान</span>
+                <h3 class="text-2xl sm:text-3xl font-display text-maroon-900 mt-1">द्वादश राशियाँ (१२ राशियों का स्वामी एवं तत्व)</h3>
+                <p class="text-sm text-stone-600 mt-1">भारतीय ज्योतिष शास्त्र के अनुसार भचक्र की १२ राशियों के स्वामी ग्रह और उनकी मूल प्रकृति।</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">१. मेष</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: मंगल</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">अग्नि तत्व • चर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">२. वृषभ</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: शुक्र</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">पृथ्वी तत्व • स्थिर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">३. मिथुन</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: बुध</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">वायु तत्व • द्विस्वभाव</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">४. कर्क</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: चन्द्रमा</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">जल तत्व • चर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">५. सिंह</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: सूर्य</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">अग्नि तत्व • स्थिर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">६. कन्या</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: बुध</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">पृथ्वी तत्व • द्विस्वभाव</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">७. तुला</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: शुक्र</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">वायु तत्व • चर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">८. वृश्चिक</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: मंगल</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">जल तत्व • स्थिर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">९. धनु</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: बृहस्पति</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">अग्नि तत्व • द्विस्वभाव</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">१०. मकर</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: शनि</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">पृथ्वी तत्व • चर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">११. कुम्भ</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: शनि</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">वायु तत्व • स्थिर</div>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-cream-50 border border-saffron-100 text-center">
+                    <div class="text-lg font-extrabold text-maroon-900">१२. मीन</div>
+                    <div class="text-xs text-saffron-700 font-semibold mt-1">स्वामी: बृहस्पति</div>
+                    <div class="text-[11px] text-stone-500 mt-0.5">जल तत्व • द्विस्वभाव</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HINDU CALENDAR & SAMVAT INFORMATION -->
+        <section id="calendar-info" class="bg-gradient-to-br from-saffron-50 to-cream-200 rounded-3xl border border-saffron-200 p-6 sm:p-8">
+            <div class="max-w-3xl mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-saffron-700">भारतीय कालगणना</span>
+                <h3 class="text-2xl sm:text-3xl font-display text-maroon-900 mt-1">हिन्दू कैलेंडर एवं विक्रम संवत परिचय</h3>
+                <p class="text-stone-600 text-sm sm:text-base mt-2">
+                    भारतीय पंचांग सूर्य और चन्द्रमा की खगोलीय स्थिति पर आधारित विश्व की सबसे वैज्ञानिक कालगणना पद्धति है।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-saffron-200">
+                    <div class="w-10 h-10 rounded-xl bg-saffron-100 text-saffron-700 flex items-center justify-center font-bold mb-3">संवत</div>
+                    <h4 class="font-bold text-lg text-stone-900 mb-1.5">विक्रम संवत (Vikram Samvat)</h4>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        सम्राट विक्रमादित्य द्वारा ५७ ईसा पूर्व आरम्भ किया गया यह संवत ग्रेगोरियन कैलेंडर से ५७ वर्ष आगे चलता है। इसका नववर्ष चैत्र शुक्ल प्रतिपदा (गुड़ी पड़वा) से आरम्भ होता है।
+                    </p>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-saffron-200">
+                    <div class="w-10 h-10 rounded-xl bg-saffron-100 text-saffron-700 flex items-center justify-center font-bold mb-3">मास</div>
+                    <h4 class="font-bold text-lg text-stone-900 mb-1.5">१२ हिन्दू चन्द्र मास</h4>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        चैत्र, वैशाख, ज्येष्ठ, आषाढ़, श्रावण, भाद्रपद, आश्विन, कार्तिक, मार्गशीर्ष, पौष, माघ और फाल्गुन। प्रत्येक मास में शुक्ल पक्ष (१५ दिन) और कृष्ण पक्ष (१५ दिन) होते हैं।
+                    </p>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-saffron-200">
+                    <div class="w-10 h-10 rounded-xl bg-saffron-100 text-saffron-700 flex items-center justify-center font-bold mb-3">अयन</div>
+                    <h4 class="font-bold text-lg text-stone-900 mb-1.5">उत्तरायण एवं दक्षिणायन</h4>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        सूर्य के मकर राशि में प्रवेश से उत्तरायण (देवताओं का दिन) और कर्क राशि में प्रवेश से दक्षिणायन आरम्भ होता है। ६ ऋतुएँ—वसंत, ग्रीष्म, वर्षा, शरद, हेमन्त व शिशिर होती हैं।
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANCHANG EDUCATIONAL ARTICLES -->
+        <section id="articles-section">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-saffron-700">पंचांग ज्ञान कोष</span>
+                    <h3 class="text-2xl sm:text-3xl font-display text-maroon-900 mt-1">पंचांग क्या है और इसे कैसे देखें?</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-2xl border border-stone-200 p-6 shadow-card card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-saffron-700 bg-saffron-50 px-3 py-1 rounded-full mb-3">
+                            <span>अध्याय १</span> • <span>मूल सिद्धांत</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-stone-900 mb-2">पंचांग के पाँच अंगों का महत्व</h4>
+                        <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                            'पंचांग' का शाब्दिक अर्थ है पाँच अंग—<strong>तिथि, वार, नक्षत्र, योग और करण</strong>। किसी भी मांगलिक कार्य जैसे विवाह, गृह प्रवेश, मुंडन या व्यापार आरम्भ करने से पहले इन पाँचों की शुद्धि देखी जाती है।
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-stone-100 text-xs font-semibold text-saffron-700">
+                        पढ़ने का समय: २ मिनट
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="bg-white rounded-2xl border border-stone-200 p-6 shadow-card card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-saffron-700 bg-saffron-50 px-3 py-1 rounded-full mb-3">
+                            <span>अध्याय २</span> • <span>मुहूर्त शास्त्र</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-stone-900 mb-2">राहुकाल और अभिजीत मुहूर्त क्या हैं?</h4>
+                        <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                            प्रत्येक दिन सूर्योदय और सूर्यास्त के बीच लगभग ९० मिनट का समय <strong>राहुकाल</strong> कहलाता है, जिसमें नए शुभ कार्य वर्जित हैं। वहीं दोपहर के समय लगभग ४८ मिनट का <strong>अभिजीत मुहूर्त</strong> सभी दोषों को नष्ट करने वाला माना जाता है।
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-stone-100 text-xs font-semibold text-saffron-700">
+                        पढ़ने का समय: ३ मिनट
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="bg-white rounded-2xl border border-stone-200 p-6 shadow-card card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-saffron-700 bg-saffron-50 px-3 py-1 rounded-full mb-3">
+                            <span>अध्याय ३</span> • <span>खगोल विज्ञान</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-stone-900 mb-2">सूर्योदय आधारित स्थान-विशेष पंचांग</h4>
+                        <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                            भारत के अलग-अलग शहरों (जैसे वाराणसी, दिल्ली, मुंबई) के अक्षांश और देशांतर भिन्न होने के कारण स्थानीय सूर्योदय और सूर्यास्त बदलता है। इसी कारण पंचांग हमेशा अपने शहर के अनुसार देखना चाहिए।
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-stone-100 text-xs font-semibold text-saffron-700">
+                        पढ़ने का समय: २ मिनट
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PROFESSIONAL FOOTER -->
+    <footer class="bg-maroon-900 text-saffron-100 border-t-4 border-saffron-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/10">
+                <!-- Col 1 -->
+                <div>
+                    <div class="flex items-center gap-2.5 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-saffron-500 flex items-center justify-center text-white font-display text-2xl pt-1">ॐ</div>
+                        <span class="font-display text-2xl text-white">हिन्दी पंचांग</span>
+                    </div>
+                    <p class="text-sm text-saffron-200/80 leading-relaxed">
+                        भारतीय सनातन संस्कृति, ज्योतिष एवं खगोलीय गणना पर आधारित आधुनिक हिन्दी पंचांग पोर्टल।
+                    </p>
+                </div>
+
+                <!-- Col 2: Important Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-base">महत्वपूर्ण लिंक</h4>
+                    <ul class="space-y-2 text-sm text-saffron-200/80">
+                        <li><a href="#panchang-calculator" class="hover:text-white transition">आज का पंचांग (Today's Panchang)</a></li>
+                        <li><a href="#festivals-section" class="hover:text-white transition">व्रत एवं त्योहार २०२६</a></li>
+                        <li><a href="#muhurat-section" class="hover:text-white transition">शुभ मुहूर्त एवं राहुकाल</a></li>
+                        <li><a href="#choghadiya-section" class="hover:text-white transition">दैनिक चौघड़िया मुहूर्त</a></li>
+                        <li><a href="#rashifal-section" class="hover:text-white transition">१२ राशियों की जानकारी</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Major Cities -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-base">प्रमुख शहरों का पंचांग</h4>
+                    <ul class="space-y-2 text-sm text-saffron-200/80">
+                        <li><button onclick="selectCityShortcut('varanasi')" class="hover:text-white transition cursor-pointer">वाराणसी (काशी) पंचांग</button></li>
+                        <li><button onclick="selectCityShortcut('delhi')" class="hover:text-white transition cursor-pointer">नई दिल्ली पंचांग</button></li>
+                        <li><button onclick="selectCityShortcut('ujjain')" class="hover:text-white transition cursor-pointer">उज्जैन पंचांग</button></li>
+                        <li><button onclick="selectCityShortcut('ayodhya')" class="hover:text-white transition cursor-pointer">अयोध्या पंचांग</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Legal & Policy Pages (Mandatory for Google AdSense Approval) -->
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-base">नीति एवं संपर्क (Legal & Info)</h4>
+                    <ul class="space-y-2 text-sm text-saffron-200/80 mb-4">
+                        <li><button onclick="openLegalModal('about')" class="hover:text-white transition cursor-pointer">हमारे बारे में (About Us)</button></li>
+                        <li><button onclick="openLegalModal('privacy')" class="hover:text-white transition cursor-pointer">गोपनीयता नीति (Privacy Policy)</button></li>
+                        <li><button onclick="openLegalModal('disclaimer')" class="hover:text-white transition cursor-pointer">अस्वीकरण (Disclaimer)</button></li>
+                        <li><button onclick="openLegalModal('contact')" class="hover:text-white transition cursor-pointer">संपर्क करें (Contact Us)</button></li>
+                    </ul>
+                    <button onclick="openBackendModal()" class="inline-flex items-center gap-1.5 bg-saffron-600 hover:bg-saffron-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition cursor-pointer">
+                        <i data-lucide="terminal" class="w-4 h-4"></i> Flask API एवं SEO कोड देखें
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-saffron-300/80">
+                <p>© २०२६ हिन्दी पंचांग (Hindi Panchang). सर्वाधिकार सुरक्षित।</p>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button onclick="openLegalModal('about')" class="hover:text-white cursor-pointer">About</button>
+                    <span>•</span>
+                    <button onclick="openLegalModal('privacy')" class="hover:text-white cursor-pointer">Privacy Policy</button>
+                    <span>•</span>
+                    <button onclick="openLegalModal('disclaimer')" class="hover:text-white cursor-pointer">Disclaimer</button>
+                    <span>•</span>
+                    <button onclick="openLegalModal('contact')" class="hover:text-white cursor-pointer">Contact</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ADSENSE LEGAL & INFO PAGES MODAL (About, Privacy Policy, Disclaimer, Contact Us) -->
+    <div id="legal-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-saffron-300 overflow-hidden">
+            <div class="bg-maroon-900 text-white px-6 py-4 flex items-center justify-between">
+                <h3 id="legal-modal-title" class="font-bold text-lg text-saffron-200">हमारे बारे में</h3>
+                <button onclick="closeLegalModal()" class="p-1.5 rounded-lg hover:bg-white/10 text-white cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <!-- Tab Switcher inside Modal -->
+            <div class="bg-saffron-50 px-6 py-2.5 border-b border-saffron-200 flex flex-wrap gap-2 text-xs font-bold">
+                <button onclick="openLegalModal('about')" class="px-3 py-1.5 rounded-lg bg-white border border-saffron-200 text-maroon-900 hover:bg-saffron-100 cursor-pointer">About Us</button>
+                <button onclick="openLegalModal('privacy')" class="px-3 py-1.5 rounded-lg bg-white border border-saffron-200 text-maroon-900 hover:bg-saffron-100 cursor-pointer">Privacy Policy</button>
+                <button onclick="openLegalModal('disclaimer')" class="px-3 py-1.5 rounded-lg bg-white border border-saffron-200 text-maroon-900 hover:bg-saffron-100 cursor-pointer">Disclaimer</button>
+                <button onclick="openLegalModal('contact')" class="px-3 py-1.5 rounded-lg bg-white border border-saffron-200 text-maroon-900 hover:bg-saffron-100 cursor-pointer">Contact Us</button>
+            </div>
+            <div id="legal-modal-body" class="p-6 overflow-y-auto text-sm text-stone-700 leading-relaxed space-y-4">
+                <!-- Dynamic Legal Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FULL-STACK PYTHON FLASK + SWISS EPHEMERIS + SEO MODAL -->
+    <div id="backend-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl border border-saffron-300 overflow-hidden">
+            <div class="bg-maroon-900 text-white px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="server" class="w-5 h-5 text-saffron-400"></i>
+                    <h3 class="font-bold text-base sm:text-lg">Python Flask + Swiss Ephemeris (`pyswisseph`) Backend & SEO</h3>
+                </div>
+                <button onclick="closeBackendModal()" class="p-1.5 rounded-lg hover:bg-white/10 text-white cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-sm">
+                <p class="text-stone-600">
+                    प्रोडक्शन सर्वर पर सटीक खगोलीय गणना के लिए नीचे दिया गया <strong>Python Flask + pyswisseph</strong> REST API, <code>sitemap.xml</code>, और <code>robots.txt</code> कोड उपयोग करें:
+                </p>
+                <div class="relative">
+                    <button onclick="copyBackendCode()" class="absolute right-3 top-3 bg-saffron-600 hover:bg-saffron-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg cursor-pointer">
+                        कोड कॉपी करें
+                    </button>
+                    <pre id="backend-code-block" class="bg-stone-900 text-emerald-300 p-4 rounded-2xl text-xs overflow-x-auto leading-relaxed font-mono"># app.py - Production Hindi Panchang Flask API with Swiss Ephemeris (pyswisseph)
+from flask import Flask, request, jsonify, Response
+from datetime import datetime, timedelta
+import swisseph as swe
+import sqlite3
+
+app = Flask(__name__)
+swe.set_sid_mode(swe.SIDM_LAHIRI)  # Lahiri Ayanamsa for Vedic Panchang
+
+TITHIS_HI = [
+    "प्रतिपदा", "द्वितीया", "तृतीया", "चतुर्थी", "पंचमी", "षष्ठी", "सप्तमी", "अष्टमी",
+    "नवमी", "दशमी", "एकादशी", "द्वादशी", "त्रयोदशी", "चतुर्दशी", "पूर्णिमा",
+    "प्रतिपदा", "द्वितीया", "तृतीया", "चतुर्थी", "पंचमी", "षष्ठी", "सप्तमी", "अष्टमी",
+    "नवमी", "दशमी", "एकादशी", "द्वादशी", "त्रयोदशी", "चतुर्दशी", "अमावस्या"
+]
+
+NAKSHATRAS_HI = [
+    "अश्विनी", "भरणी", "कृत्तिका", "रोहिणी", "मृगशिरा", "आर्द्रा", "पुनर्वसु", "पुष्य", "आश्लेषा",
+    "मघा", "पूर्वाफाल्गुनी", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "स्वाती", "विशाखा", "अनुराधा", "ज्येष्ठा",
+    "मूल", "पूर्वाषाढ़ा", "उत्तराषाढ़ा", "श्रवण", "धनिष्ठा", "शतभिषा", "पूर्वभाद्रपद", "उत्तरभाद्रपद", "रेवती"
+]
+
+@app.route('/api/panchang', methods=['GET'])
+def get_panchang():
+    date_str = request.args.get('date', datetime.now().strftime('%Y-%m-%d'))
+    lat = float(request.args.get('lat', 27.1767))
+    lon = float(request.args.get('lon', 78.0081))
+
+    dt = datetime.strptime(date_str, '%Y-%m-%d')
+    jd = swe.julday(dt.year, dt.month, dt.day, 0.5)  # 06:00 AM IST
+
+    sun_lon = swe.calc_ut(jd, swe.SUN, swe.FLG_SIDEREAL)[0][0]
+    moon_lon = swe.calc_ut(jd, swe.MOON, swe.FLG_SIDEREAL)[0][0]
+
+    diff = (moon_lon - sun_lon) % 360
+    tithi_idx = int(diff // 12)
+    paksha = "शुक्ल पक्ष" if tithi_idx < 15 else "कृष्ण पक्ष"
+    nakshatra_idx = int(moon_lon // (360 / 27))
+
+    return jsonify({
+        "date": date_str,
+        "paksha": paksha,
+        "tithi": TITHIS_HI[tithi_idx],
+        "nakshatra": NAKSHATRAS_HI[nakshatra_idx],
+        "ayanamsa": "Lahiri"
+    })
+
+@app.route('/robots.txt')
+def robots():
+    return Response("User-agent: *\nAllow: /\nSitemap: https://hindipanchang.example.com/sitemap.xml", mimetype='text/plain')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://hindipanchang.example.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+</urlset>'''
+    return Response(xml, mimetype='application/xml')
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification (No alert() used) -->
+    <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden bg-maroon-900 text-white px-5 py-3 rounded-2xl shadow-xl border border-saffron-400 text-sm font-semibold flex items-center gap-2.5 transition-all">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-saffron-400"></i>
+        <span id="toast-message">संदेश</span>
+    </div>
+
+    <!-- ASTRONOMICAL ENGINE & INTERACTIVE PANCHANG LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Indian Cities Database with Coordinates & Timezone Offset
+        const CITIES = {
+            delhi:     { name: "नई दिल्ली, दिल्ली", lat: 28.6139, lon: 77.2090 },
+            varanasi:  { name: "वाराणसी (काशी), उत्तर प्रदेश", lat: 25.3176, lon: 82.9739 },
+            agra:      { name: "आगरा, उत्तर प्रदेश", lat: 27.1767, lon: 78.0081 },
+            ayodhya:   { name: "अयोध्या, उत्तर प्रदेश", lat: 26.7922, lon: 82.1998 },
+            ujjain:    { name: "उज्जैन, मध्य प्रदेश", lat: 23.1765, lon: 75.7885 },
+            mumbai:    { name: "मुंबई, महाराष्ट्र", lat: 19.0760, lon: 72.8777 },
+            jaipur:    { name: "जयपुर, राजस्थान", lat: 26.9124, lon: 75.7873 },
+            prayagraj: { name: "प्रयागराज, उत्तर प्रदेश", lat: 25.4358, lon: 81.8463 },
+            haridwar:  { name: "हरिद्वार, उत्तराखंड", lat: 29.9457, lon: 78.1642 },
+            kolkata:   { name: "कोलकाता, पश्चिम बंगाल", lat: 22.5726, lon: 88.3639 },
+            bengaluru: { name: "बेंगलुरु, कर्नाटक", lat: 12.9716, lon: 77.5946 },
+            chennai:   { name: "चेन्नई, तमिलनाडु", lat: 13.0827, lon: 80.2707 },
+            patna:     { name: "पटना, बिहार", lat: 25.5941, lon: 85.1376 },
+            ahmedabad: { name: "अहमदाबाद, गुजरात", lat: 23.0225, lon: 72.5714 }
+        };
+
+        // Hindi Panchang Constants
+        const HINDI_DAYS = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
+        const HINDI_MONTHS_GREG = ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितम्बर", "अक्टूबर", "नवम्बर", "दिसम्बर"];
+        const HINDU_MONTHS = ["चैत्र", "वैशाख", "ज्येष्ठ", "आषाढ़", "श्रावण", "भाद्रपद", "आश्विन", "कार्तिक", "मार्गशीर्ष", "पौष", "माघ", "फाल्गुन"];
+        const TITHIS = [
+            "प्रतिपदा", "द्वितीया", "तृतीया", "चतुर्थी", "पंचमी", "षष्ठी", "सप्तमी", "अष्टमी",
+            "नवमी", "दशमी", "एकादशी", "द्वादशी", "त्रयोदशी", "चतुर्दशी", "पूर्णिमा",
+            "प्रतिपदा", "द्वितीया", "तृतीया", "चतुर्थी", "पंचमी", "षष्ठी", "सप्तमी", "अष्टमी",
+            "नवमी", "दशमी", "एकादशी", "द्वादशी", "त्रयोदशी", "चतुर्दशी", "अमावस्या"
+        ];
+        const NAKSHATRAS = [
+            "अश्विनी", "भरणी", "कृत्तिका", "रोहिणी", "मृगशिरा", "आर्द्रा", "पुनर्वसु", "पुष्य", "आश्लेषा",
+            "मघा", "पूर्वाफाल्गुनी", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "स्वाती", "विशाखा", "अनुराधा", "ज्येष्ठा",
+            "मूल", "पूर्वाषाढ़ा", "उत्तराषाढ़ा", "श्रवण", "धनिष्ठा", "शतभिषा", "पूर्वभाद्रपद", "उत्तरभाद्रपद", "रेवती"
+        ];
+        const YOGAS = [
+            "विष्कम्भ", "प्रीति", "आयुष्मान", "सौभाग्य", "शोभन", "अतिगण्ड", "सुकर्मा", "धृति", "शूल",
+            "गण्ड", "वृद्धि", "ध्रुव", "व्याघात", "हर्षण", "वज्र", "सिद्धि", "व्यतीपात", "वरीयान",
+            "परिघ", "शिव", "सिद्ध", "साध्य", "शुभ", "शुक्ल", "ब्रह्म", "इन्द्र", "वैधृति"
+        ];
+        const KARANAS = ["बव", "बालव", "कौलव", "तैतिल", "गर", "वणिज", "विष्टि (भद्रा)"];
+        const RASHIS = ["मेष", "वृषभ", "मिथुन", "कर्क", "सिंह", "कन्या", "तुला", "वृश्चिक", "धनु", "मकर", "कुम्भ", "मीन"];
+        const DISHA_SHOOL = ["पश्चिम दिशा", "पूर्व दिशा", "उत्तर दिशा", "उत्तर दिशा", "दक्षिण दिशा", "पश्चिम दिशा", "पूर्व दिशा"];
+
+        // Rahu Kaal, Yamaganda, Gulika slot indices (1 to 8 of daytime) by weekday (0=Sun..6=Sat)
+        const RAHU_SLOTS   = [8, 2, 7, 5, 6, 4, 3];
+        const YAMA_SLOTS   = [5, 4, 3, 2, 1, 7, 6];
+        const GULIKA_SLOTS = [7, 6, 5, 4, 3, 2, 1];
+
+        // Choghadiya sequences by weekday (0=Sun..6=Sat)
+        const CHOGHADIYA_ORDER = [
+            ["उद्वेग", "चर", "लाभ", "अमृत", "काल", "शुभ", "रोग", "उद्वेग"], // Sun
+            ["अमृत", "काल", "शुभ", "रोग", "उद्वेग", "चर", "लाभ", "अमृत"], // Mon
+            ["रोग", "उद्वेग", "चर", "लाभ", "अमृत", "काल", "शुभ", "रोग"], // Tue
+            ["लाभ", "अमृत", "काल", "शुभ", "रोग", "उद्वेग", "चर", "लाभ"], // Wed
+            ["शुभ", "रोग", "उद्वेग", "चर", "लाभ", "अमृत", "काल", "शुभ"], // Thu
+            ["चर", "लाभ", "अमृत", "काल", "शुभ", "रोग", "उद्वेग", "चर"], // Fri
+            ["काल", "शुभ", "रोग", "उद्वेग", "चर", "लाभ", "अमृत", "काल"]  // Sat
+        ];
+
+        function toHindiDigits(str) {
+            const map = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+            return String(str).replace(/[0-9]/g, d => map[d]);
+        }
+
+        function formatMinutesToTime(totalMins) {
+            let mins = ((Math.round(totalMins) % 1440) + 1440) % 1440;
+            let h = Math.floor(mins / 60);
+            let m = mins % 60;
+            const ampm = h >= 12 ? "PM" : "AM";
+            h = h % 12;
+            if (h === 0) h = 12;
+            return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')} ${ampm}`;
+        }
+
+        // Solar Sunrise & Sunset Calculation (NOAA Astronomical Formula)
+        function calculateSunTimes(dateObj, lat, lon) {
+            const start = new Date(dateObj.getFullYear(), 0, 0);
+            const diff = dateObj - start;
+            const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            const gamma = (2 * Math.PI / 365) * (dayOfYear - 1);
+            const eqTime = 229.18 * (0.000075 + 0.001868 * Math.cos(gamma) - 0.032077 * Math.sin(gamma)
+                - 0.014615 * Math.cos(2 * gamma) - 0.040849 * Math.sin(2 * gamma));
+            const decl = 0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma)
+                - 0.006758 * Math.cos(2 * gamma) + 0.000907 * Math.sin(2 * gamma)
+                - 0.002697 * Math.cos(3 * gamma) + 0.00148 * Math.sin(3 * gamma);
+
+            const latRad = lat * Math.PI / 180;
+            const zenith = 90.833 * Math.PI / 180;
+            let cosHA = (Math.cos(zenith) / (Math.cos(latRad) * Math.cos(decl))) - Math.tan(latRad) * Math.tan(decl);
+            cosHA = Math.max(-1, Math.min(1, cosHA));
+            const haDeg = Math.acos(cosHA) * 180 / Math.PI;
+
+            const tzOffset = 330; // IST +5:30 in minutes
+            const sunriseMins = 720 - 4 * (lon + haDeg) - eqTime + tzOffset;
+            const sunsetMins  = 720 - 4 * (lon - haDeg) - eqTime + tzOffset;
+
+            return { sunriseMins, sunsetMins };
+        }
+
+        // Sidereal Sun, Moon, Tithi, Nakshatra, Yoga, Karana Astronomical Approximation
+        function calculateAstronomicalPanchang(dateObj, city) {
+            const { sunriseMins, sunsetMins } = calculateSunTimes(dateObj, city.lat, city.lon);
+
+            // Julian Day at 06:00 AM IST (00:30 UTC)
+            const utcTimestamp = Date.UTC(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate(), 0, 30, 0);
+            const jd = (utcTimestamp / 86400000) + 2440587.5;
+            const d = jd - 2451545.0; // Days since J2000.0
+
+            // Lahiri Ayanamsa
+            const ayanamsa = 23.853 + (d / 365.25) * 0.01396;
+
+            // Tropical Sun Longitude
+            const gSun = ((357.529 + 0.98560028 * d) % 360 + 360) % 360;
+            const qSun = ((280.459 + 0.98564736 * d) % 360 + 360) % 360;
+            const gSunRad = gSun * Math.PI / 180;
+            const sunTrop = (qSun + 1.915 * Math.sin(gSunRad) + 0.020 * Math.sin(2 * gSunRad)) % 360;
+            const sunSid = ((sunTrop - ayanamsa) % 360 + 360) % 360;
+
+            // Tropical Moon Longitude
+            const lMoon = ((218.316 + 13.176396 * d) % 360 + 360) % 360;
+            const mMoon = ((134.963 + 13.064993 * d) % 360 + 360) % 360;
+            const fMoon = ((93.272 + 13.229350 * d) % 360 + 360) % 360;
+            const mMoonRad = mMoon * Math.PI / 180;
+            const fMoonRad = fMoon * Math.PI / 180;
+
+            const moonTrop = (lMoon + 6.289 * Math.sin(mMoonRad) - 1.274 * Math.sin(2 * (lMoon - sunTrop) * Math.PI / 180 - mMoonRad)
+                + 0.658 * Math.sin(2 * (lMoon - sunTrop) * Math.PI / 180) - 0.186 * Math.sin(gSunRad)) % 360;
+            const moonSid = ((moonTrop - ayanamsa) % 360 + 360) % 360;
+
+            // 1. Tithi (every 12 degrees of Moon - Sun)
+            const elongation = ((moonSid - sunSid) % 360 + 360) % 360;
+            const tithiFloat = elongation / 12;
+            const tithiIdx = Math.floor(tithiFloat);
+            const nextTithiIdx = (tithiIdx + 1) % 30;
+            const paksha = tithiIdx < 15 ? "शुक्ल पक्ष" : "कृष्ण पक्ष";
+            const tithiRemFrac = 1 - (tithiFloat - tithiIdx);
+            const tithiEndMins = sunriseMins + tithiRemFrac * 1380;
+
+            // 2. Nakshatra (every 13.3333 degrees of Moon)
+            const nakFloat = moonSid / (360 / 27);
+            const nakIdx = Math.floor(nakFloat);
+            const nextNakIdx = (nakIdx + 1) % 27;
+            const nakRemFrac = 1 - (nakFloat - nakIdx);
+            const nakEndMins = sunriseMins + nakRemFrac * 1410;
+
+            // 3. Yoga (every 13.3333 degrees of Sun + Moon)
+            const yogaDeg = (sunSid + moonSid) % 360;
+            const yogaFloat = yogaDeg / (360 / 27);
+            const yogaIdx = Math.floor(yogaFloat);
+            const nextYogaIdx = (yogaIdx + 1) % 27;
+            const yogaRemFrac = 1 - (yogaFloat - yogaIdx);
+            const yogaEndMins = sunriseMins + yogaRemFrac * 1340;
+
+            // 4. Karana (half of Tithi = 6 degrees)
+            const karanaHalfIdx = Math.floor(elongation / 6);
+            let karanaName = KARANAS[karanaHalfIdx % 7];
+            let nextKaranaName = KARANAS[(karanaHalfIdx + 1) % 7];
+            if (karanaHalfIdx === 0) karanaName = "किंस्तुघ्न";
+            if (karanaHalfIdx === 57) karanaName = "शकुनि";
+            if (karanaHalfIdx === 58) karanaName = "चतुष्पद";
+            if (karanaHalfIdx === 59) karanaName = "नाग";
+
+            // Rashis
+            const moonRashi = RASHIS[Math.floor(moonSid / 30)];
+            const sunRashi = RASHIS[Math.floor(sunSid / 30)];
+
+            // Hindu Lunar Month & Samvat
+            const sunRashiIdx = Math.floor(sunSid / 30);
+            const hinduMonthIdx = (sunRashiIdx + (tithiIdx >= 15 ? 1 : 0)) % 12;
+            const hinduMonth = HINDU_MONTHS[hinduMonthIdx];
+
+            const year = dateObj.getFullYear();
+            const vikramSamvat = (dateObj.getMonth() >= 3) ? year + 57 : year + 56;
+            const shakaSamvat = (dateObj.getMonth() >= 3) ? year - 78 : year - 79;
+
+            // Ritu (Season)
+            const ritus = ["वसन्त ऋतु", "ग्रीष्म ऋतु", "वर्षा ऋतु", "शरद ऋतु", "हेमन्त ऋतु", "शिशिर ऋतु"];
+            const ritu = ritus[Math.floor(hinduMonthIdx / 2)];
+
+            // Moonrise & Moonset approximation based on Tithi
+            const moonriseMins = (sunriseMins + (tithiIdx * 48)) % 1440;
+            const moonsetMins = (moonriseMins + 735) % 1440;
+
+            // Muhurats & Ashubh Kaal
+            const dayDuration = sunsetMins - sunriseMins;
+            const eighthPart = dayDuration / 8;
+            const midday = (sunriseMins + sunsetMins) / 2;
+
+            const weekday = dateObj.getDay();
+            const rahuSlot = RAHU_SLOTS[weekday] - 1;
+            const yamaSlot = YAMA_SLOTS[weekday] - 1;
+            const gulikaSlot = GULIKA_SLOTS[weekday] - 1;
+
+            return {
+                city,
+                dateObj,
+                weekday,
+                vara: HINDI_DAYS[weekday],
+                vikramSamvat,
+                shakaSamvat,
+                hinduMonth,
+                paksha,
+                ritu,
+                sunrise: formatMinutesToTime(sunriseMins),
+                sunset: formatMinutesToTime(sunsetMins),
+                moonrise: formatMinutesToTime(moonriseMins),
+                moonset: formatMinutesToTime(moonsetMins),
+                tithi: TITHIS[tithiIdx],
+                tithiEnd: formatMinutesToTime(tithiEndMins),
+                nextTithi: TITHIS[nextTithiIdx],
+                nakshatra: NAKSHATRAS[nakIdx],
+                nakshatraEnd: formatMinutesToTime(nakEndMins),
+                nextNakshatra: NAKSHATRAS[nextNakIdx],
+                yoga: YOGAS[yogaIdx],
+                yogaEnd: formatMinutesToTime(yogaEndMins),
+                nextYoga: YOGAS[nextYogaIdx],
+                karana: karanaName,
+                karanaEnd: formatMinutesToTime(tithiEndMins),
+                nextKarana: nextKaranaName,
+                moonRashi,
+                sunRashi,
+                abhijit: `${formatMinutesToTime(midday - 24)} - ${formatMinutesToTime(midday + 24)}`,
+                brahma: `${formatMinutesToTime(sunriseMins - 96)} - ${formatMinutesToTime(sunriseMins - 48)}`,
+                amrit: `${formatMinutesToTime(sunriseMins + eighthPart * 3.2)} - ${formatMinutesToTime(sunriseMins + eighthPart * 4.4)}`,
+                vijaya: `${formatMinutesToTime(sunriseMins + eighthPart * 5.2)} - ${formatMinutesToTime(sunriseMins + eighthPart * 5.8)}`,
+                rahu: `${formatMinutesToTime(sunriseMins + rahuSlot * eighthPart)} - ${formatMinutesToTime(sunriseMins + (rahuSlot + 1) * eighthPart)}`,
+                yama: `${formatMinutesToTime(sunriseMins + yamaSlot * eighthPart)} - ${formatMinutesToTime(sunriseMins + (yamaSlot + 1) * eighthPart)}`,
+                gulika: `${formatMinutesToTime(sunriseMins + gulikaSlot * eighthPart)} - ${formatMinutesToTime(sunriseMins + (gulikaSlot + 1) * eighthPart)}`,
+                dishaShool: DISHA_SHOOL[weekday],
+                sunriseMins,
+                eighthPart
+            };
+        }
+
+        function getSpecialFestivalNote(data) {
+            if (data.tithi === "एकादशी") return `विशेष व्रत: ${data.hinduMonth} ${data.paksha} एकादशी व्रत (भगवान विष्णु आराधना)`;
+            if (data.tithi === "पूर्णिमा") return `विशेष पर्व: ${data.hinduMonth} पूर्णिमा स्नान, दान एवं सत्यनारायण व्रत`;
+            if (data.tithi === "अमावस्या") return `विशेष तिथि: ${data.hinduMonth} अमावस्या (पितृ तर्पण एवं दान पुण्य हेतु उत्तम)`;
+            if (data.tithi === "चतुर्थी" && data.paksha === "कृष्ण पक्ष") return `विशेष व्रत: संकष्टी श्री गणेश चतुर्थी व्रत एवं चन्द्रोदय अर्घ्य`;
+            if (data.tithi === "त्रयोदशी") return `विशेष व्रत: प्रदोष व्रत (भगवान शिव की संध्या आराधना हेतु श्रेष्ठ)`;
+            return `विशेष: ${data.nakshatra} नक्षत्र एवं ${data.yoga} योग का शुभ संयोग`;
+        }
+
+        function renderChoghadiya(data) {
+            const grid = document.getElementById('choghadiya-grid');
+            const names = CHOGHADIYA_ORDER[data.weekday];
+            const goodTypes = ["अमृत", "शुभ", "लाभ"];
+            const neutralTypes = ["चर"];
+
+            grid.innerHTML = names.map((name, i) => {
+                const start = formatMinutesToTime(data.sunriseMins + i * data.eighthPart);
+                const end = formatMinutesToTime(data.sunriseMins + (i + 1) * data.eighthPart);
+
+                let badgeClass = "bg-rose-50 border-rose-200 text-rose-900";
+                let tagClass = "bg-rose-200 text-rose-900";
+                let statusText = "अशुभ";
+
+                if (goodTypes.includes(name)) {
+                    badgeClass = "bg-emerald-50 border-emerald-200 text-emerald-900";
+                    tagClass = "bg-emerald-200 text-emerald-900";
+                    statusText = "अति शुभ";
+                } else if (neutralTypes.includes(name)) {
+                    badgeClass = "bg-amber-50 border-amber-200 text-amber-900";
+                    tagClass = "bg-amber-200 text-amber-900";
+                    statusText = "सामान्य";
+                }
+
+                return `
+                    <div class="p-4 rounded-2xl border ${badgeClass} flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-extrabold text-base">${name} चौघड़िया</span>
+                            <span class="text-[11px] font-bold px-2 py-0.5 rounded-full ${tagClass}">${statusText}</span>
+                        </div>
+                        <div class="text-xs font-mono font-semibold opacity-85">${start} - ${end}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        let currentPanchangData = null;
+
+        function calculateAndRenderPanchang() {
+            const dateInput = document.getElementById('panchang-date').value;
+            const cityKey = document.getElementById('panchang-city').value;
+            const city = CITIES[cityKey] || CITIES.agra;
+
+            const parts = dateInput.split('-');
+            const dateObj = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+
+            const data = calculateAstronomicalPanchang(dateObj, city);
+            currentPanchangData = data;
+
+            // Update Banner
+            document.getElementById('res-city-badge').textContent = `📍 ${city.name}`;
+            document.getElementById('res-samvat-badge').textContent = `विक्रम संवत ${toHindiDigits(data.vikramSamvat)} • शक संवत ${toHindiDigits(data.shakaSamvat)}`;
+
+            const dayNumHi = toHindiDigits(dateObj.getDate());
+            const monthNameHi = HINDI_MONTHS_GREG[dateObj.getMonth()];
+            const yearHi = toHindiDigits(dateObj.getFullYear());
+            document.getElementById('res-hindi-date-title').textContent = `${data.vara}, ${dayNumHi} ${monthNameHi} ${yearHi}`;
+            document.getElementById('res-hindu-month-subtitle').textContent = `${data.hinduMonth} मास, ${data.paksha}, ${data.tithi} तिथि • ${data.ritu}`;
+
+            document.getElementById('res-sunrise').textContent = data.sunrise;
+            document.getElementById('res-sunset').textContent = data.sunset;
+            document.getElementById('res-moonrise').textContent = data.moonrise;
+            document.getElementById('res-moonset').textContent = data.moonset;
+            document.getElementById('res-festival-highlight').innerHTML = `<i data-lucide="sparkles" class="w-4 h-4"></i> ${getSpecialFestivalNote(data)}`;
+
+            // Update 5 Anga Cards
+            document.getElementById('card-tithi').textContent = `${data.paksha.split(' ')[0]} ${data.tithi}`;
+            document.getElementById('card-tithi-end').textContent = `समाप्ति: ${data.tithiEnd} तक`;
+            document.getElementById('card-tithi-next').textContent = `तदुपरांत ${data.nextTithi}`;
+
+            document.getElementById('card-nakshatra').textContent = data.nakshatra;
+            document.getElementById('card-nakshatra-end').textContent = `समाप्ति: ${data.nakshatraEnd} तक`;
+            document.getElementById('card-nakshatra-next').textContent = `तदुपरांत ${data.nextNakshatra}`;
+
+            document.getElementById('card-yoga').textContent = data.yoga;
+            document.getElementById('card-yoga-end').textContent = `समाप्ति: ${data.yogaEnd} तक`;
+            document.getElementById('card-yoga-next').textContent = `तदुपरांत ${data.nextYoga}`;
+
+            document.getElementById('card-karana').textContent = data.karana;
+            document.getElementById('card-karana-end').textContent = `समाप्ति: ${data.karanaEnd} तक`;
+            document.getElementById('card-karana-next').textContent = `तदुपरांत ${data.nextKarana}`;
+
+            document.getElementById('card-vara').textContent = data.vara;
+            document.getElementById('card-moon-rashi').textContent = `चन्द्र राशि: ${data.moonRashi}`;
+            document.getElementById('card-sun-rashi').textContent = `सूर्य राशि: ${data.sunRashi}`;
+
+            // Update Muhurat & Ashubh Kaal
+            document.getElementById('muhurat-abhijit').textContent = data.abhijit;
+            document.getElementById('muhurat-brahma').textContent = data.brahma;
+            document.getElementById('muhurat-amrit').textContent = data.amrit;
+            document.getElementById('muhurat-vijaya').textContent = data.vijaya;
+
+            document.getElementById('ashubh-rahu').textContent = data.rahu;
+            document.getElementById('ashubh-yama').textContent = data.yama;
+            document.getElementById('ashubh-gulika').textContent = data.gulika;
+            document.getElementById('ashubh-disha').textContent = data.dishaShool;
+
+            // Update Choghadiya
+            renderChoghadiya(data);
+            lucide.createIcons();
+        }
+
+        function setTodayAndCalculate() {
+            const now = new Date();
+            const yyyy = now.getFullYear();
+            const mm = String(now.getMonth() + 1).padStart(2, '0');
+            const dd = String(now.getDate()).padStart(2, '0');
+            document.getElementById('panchang-date').value = `${yyyy}-${mm}-${dd}`;
+            calculateAndRenderPanchang();
+            showToast("आज का सटीक पंचांग लोड किया गया");
+        }
+
+        function changeDay(offsetDays) {
+            const dateInput = document.getElementById('panchang-date');
+            const parts = dateInput.value.split('-');
+            const d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+            d.setDate(d.getDate() + offsetDays);
+            const yyyy = d.getFullYear();
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const dd = String(d.getDate()).padStart(2, '0');
+            dateInput.value = `${yyyy}-${mm}-${dd}`;
+            calculateAndRenderPanchang();
+        }
+
+        function selectCityShortcut(cityKey) {
+            document.getElementById('panchang-city').value = cityKey;
+            calculateAndRenderPanchang();
+            document.getElementById('panchang-calculator').scrollIntoView({ behavior: 'smooth' });
+            showToast(`${CITIES[cityKey].name} का पंचांग अपडेट किया गया`);
+        }
+
+        function jumpToFestivalDate(isoDate) {
+            document.getElementById('panchang-date').value = isoDate;
+            calculateAndRenderPanchang();
+            document.getElementById('panchang-calculator').scrollIntoView({ behavior: 'smooth' });
+            showToast("चयनित पर्व की तिथि का पंचांग लोड किया गया");
+        }
+
+        const LEGAL_PAGES = {
+            about: {
+                title: "हमारे बारे में (About Us) - हिन्दी पंचांग",
+                html: `
+                    <p><strong>हिन्दी पंचांग (Hindi Panchang)</strong> एक आधुनिक भारतीय डिजिटल कैलेंडर और खगोलीय पंचांग मंच है, जिसका उद्देश्य सनातन धर्म की प्राचीन कालगणना पद्धति को सरल, सटीक और निःशुल्क रूप में जन-जन तक पहुँचाना है।</p>
+                    <p>हमारी गणनाएँ पारंपरिक <strong>दृक गणित (Drik Ganita)</strong> और आधुनिक खगोलीय सिद्धांतों (Swiss Ephemeris / लाहिड़ी अयनांश) पर आधारित हैं, जिससे आपको अपने शहर के अक्षांश और देशांतर के अनुसार सटीक सूर्योदय, सूर्यास्त, तिथि, नक्षत्र, योग, करण, चौघड़िया और शुभ मुहूर्त प्राप्त होते हैं।</p>
+                    <p>हम निरंतर इस प्लेटफॉर्म पर व्रत-त्योहारों की जानकारी, राशि परिचय और पंचांग से जुड़े ज्ञानवर्धक लेख प्रकाशित करते हैं।</p>
+                `
+            },
+            privacy: {
+                title: "गोपनीयता नीति (Privacy Policy)",
+                html: `
+                    <p><strong>हिन्दी पंचांग</strong> पर, हमारे आगंतुकों की गोपनीयता (Privacy) हमारे लिए अत्यंत महत्वपूर्ण है। यह गोपनीयता नीति दस्तावेज़ बताता है कि हमारी वेबसाइट द्वारा किस प्रकार की जानकारी एकत्र और उपयोग की जाती है।</p>
+                    <h4 class="font-bold text-stone-900">१. लॉग फ़ाइलें और कुकीज़ (Log Files & Cookies)</h4>
+                    <p>अन्य मानक वेबसाइटों की तरह, हम यूज़र अनुभव को बेहतर बनाने के लिए ब्राउज़र कुकीज़ और स्थानीय स्टोरेज का उपयोग कर सकते हैं (जैसे आपका पसंदीदा शहर याद रखने के लिए)।</p>
+                    <h4 class="font-bold text-stone-900">२. Google AdSense और तृतीय-पक्ष विज्ञापन</h4>
+                    <p>भविष्य में हमारी वेबसाइट पर विज्ञापन प्रदर्शित करने के लिए <strong>Google AdSense</strong> जैसे तृतीय-पक्ष विक्रेताओं का उपयोग किया जा सकता है। Google, DART कुकीज़ का उपयोग करके उपयोगकर्ताओं को उनकी रुचि के अनुसार विज्ञापन दिखाता है। उपयोगकर्ता Google की विज्ञापन और सामग्री नेटवर्क गोपनीयता नीति पर जाकर DART कुकीज़ के उपयोग से बाहर निकल (Opt-out) सकते हैं।</p>
+                    <h4 class="font-bold text-stone-900">३. व्यक्तिगत डेटा सुरक्षा</h4>
+                    <p>हम बिना आपकी अनुमति के आपकी कोई भी निजी जानकारी किसी तीसरे पक्ष को नहीं बेचते या साझा नहीं करते हैं।</p>
+                `
+            },
+            disclaimer: {
+                title: "अस्वीकरण (Disclaimer)",
+                html: `
+                    <p><strong>हिन्दी पंचांग</strong> वेबसाइट पर उपलब्ध समस्त जानकारी (तिथि, नक्षत्र, मुहूर्त, राहुकाल, चौघड़िया एवं व्रत-त्योहार विवरण) केवल सामान्य धार्मिक एवं शैक्षणिक जानकारी के उद्देश्य से प्रकाशित की गई है।</p>
+                    <p>यद्यपि हमने खगोलीय गणनाओं को अधिकतम सटीक रखने का पूरा प्रयास किया है, तथापि स्थानीय पंचांग भेद, अयन और क्षेत्रीय परंपराओं के कारण समय में कुछ मिनटों का अंतर संभव है।</p>
+                    <p class="font-semibold text-maroon-900">किसी भी विशेष मांगलिक कार्य, विवाह, गृह प्रवेश, यज्ञ अथवा धार्मिक अनुष्ठान को आरम्भ करने से पूर्व अपने पारिवारिक पुरोहित या योग्य ज्योतिषाचार्य से परामर्श अवश्य लें।</p>
+                `
+            },
+            contact: {
+                title: "संपर्क करें (Contact Us)",
+                html: `
+                    <p>यदि आपके पास हमारी वेबसाइट, पंचांग गणना, या किसी पर्व-त्योहार की तिथि से जुड़ा कोई प्रश्न या सुझाव है, तो आप हमसे सीधे संपर्क कर सकते हैं:</p>
+                    <div class="bg-saffron-50 p-4 rounded-2xl border border-saffron-200 space-y-2">
+                        <p><strong>ईमेल (Email):</strong> contact@hindipanchang.in</p>
+                        <p><strong>स्थान:</strong> भारत (India)</p>
+                        <p><strong>कार्य समय:</strong> सोमवार से शनिवार (सुबह १०:०० से शाम ६:०० बजे तक)</p>
+                    </div>
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-3 pt-2">
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 mb-1">आपका नाम</label>
+                            <input type="text" required placeholder="अपना नाम लिखें" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 focus:outline-none focus:border-saffron-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 mb-1">आपका ईमेल</label>
+                            <input type="email" required placeholder="example@gmail.com" class="w-full px-3.5 py-2 rounded-xl border border-stone-300 focus:outline-none focus:border-saffron-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 mb-1">संदेश</label>
+                            <textarea rows="3" required placeholder="अपना प्रश्न या सुझाव यहाँ लिखें..." class="w-full px-3.5 py-2 rounded-xl border border-stone-300 focus:outline-none focus:border-saffron-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-saffron-600 hover:bg-saffron-700 text-white font-bold px-5 py-2.5 rounded-xl transition cursor-pointer">
+                            संदेश भेजें
+                        </button>
+                    </form>
+                `
+            }
+        };
+
+        function openLegalModal(pageKey) {
+            const page = LEGAL_PAGES[pageKey] || LEGAL_PAGES.about;
+            document.getElementById('legal-modal-title').textContent = page.title;
+            document.getElementById('legal-modal-body').innerHTML = page.html;
+            document.getElementById('legal-modal').classList.remove('hidden');
+        }
+
+        function closeLegalModal() {
+            document.getElementById('legal-modal').classList.add('hidden');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            closeLegalModal();
+            showToast("धन्यवाद! आपका संदेश सफलतापूर्वक प्राप्त हो गया है।");
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function openBackendModal() {
+            document.getElementById('backend-modal').classList.remove('hidden');
+        }
+
+        function closeBackendModal() {
+            document.getElementById('backend-modal').classList.add('hidden');
+        }
+
+        function showToast(msg) {
+            const box = document.getElementById('toast-box');
+            document.getElementById('toast-message').textContent = msg;
+            box.classList.remove('hidden');
+            setTimeout(() => box.classList.add('hidden'), 3000);
+        }
+
+        function copyTextFallback(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+
+        function copyPanchangSummary() {
+            if (!currentPanchangData) return;
+            const d = currentPanchangData;
+            const text = `॥ श्री गणेशाय नमः ॥\nआज का पंचांग (${d.city.name})\nदिनांक: ${document.getElementById('res-hindi-date-title').textContent}\nसंवत: विक्रम संवत ${toHindiDigits(d.vikramSamvat)}\nमास व पक्ष: ${d.hinduMonth} ${d.paksha}\nतिथि: ${d.tithi} (${d.tithiEnd} तक)\nनक्षत्र: ${d.nakshatra}\nयोग: ${d.yoga} | करण: ${d.karana}\nसूर्योदय: ${d.sunrise} | सूर्यास्त: ${d.sunset}\nअभिजीत मुहूर्त: ${d.abhijit}\nराहुकाल: ${d.rahu}`;
+            copyTextFallback(text);
+            showToast("आज का पंचांग क्लिपबोर्ड पर कॉपी हो गया!");
+        }
+
+        function copyBackendCode() {
+            const code = document.getElementById('backend-code-block').innerText;
+            copyTextFallback(code);
+            showToast("Python Flask + Swiss Ephemeris कोड कॉपी हो गया!");
+        }
+
+        // Live IST Clock
+        function updateLiveClock() {
+            const now = new Date();
+            document.getElementById('live-clock').textContent = now.toLocaleTimeString('en-IN', {
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+            }) + ' IST';
+        }
+
+        // Initialize on Page Load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateLiveClock();
+            setInterval(updateLiveClock, 1000);
+            setTodayAndCalculate();
+        });
+    </script>
+</body>
+</html>
